@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://bryanhan1001.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://bryanhan1001.github.io/"/>
   <updated>2021-04-13T14:47:53.633Z</updated>
-  <id>http://example.com/</id>
+  <id>https://bryanhan1001.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>golang面试题</title>
-    <link href="http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <link href="https://bryanhan1001.github.io/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://bryanhan1001.github.io/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2021-04-13T14:46:45.000Z</published>
     <updated>2021-04-13T14:47:53.633Z</updated>
     
@@ -37,14 +37,14 @@
     
     
     
-    <category term="golang" scheme="http://example.com/tags/golang/"/>
+    <category term="golang" scheme="https://bryanhan1001.github.io/tags/golang/"/>
     
   </entry>
   
   <entry>
     <title>python设计模式</title>
-    <link href="http://example.com/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://example.com/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
+    <link href="https://bryanhan1001.github.io/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://bryanhan1001.github.io/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
     <published>2021-04-12T14:47:25.000Z</published>
     <updated>2021-04-12T14:47:25.545Z</updated>
     
@@ -56,8 +56,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/04/12/hello-world/"/>
-    <id>http://example.com/2021/04/12/hello-world/</id>
+    <link href="https://bryanhan1001.github.io/2021/04/12/hello-world/"/>
+    <id>https://bryanhan1001.github.io/2021/04/12/hello-world/</id>
     <published>2021-04-12T14:00:14.913Z</published>
     <updated>2021-04-12T14:00:14.913Z</updated>
     
