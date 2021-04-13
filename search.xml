@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>golang面试题</title>
+      <link href="2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<ol><li>redis实现分布式锁：</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> golang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python设计模式</title>
       <link href="2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>

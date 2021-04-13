@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-12T14:47:25.545Z</updated>
+  <updated>2021-04-13T14:47:53.633Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang面试题</title>
+    <link href="http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2021-04-13T14:46:45.000Z</published>
+    <updated>2021-04-13T14:47:53.633Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>redis实现分布式锁：</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;redis实现分布式锁：&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="golang" scheme="http://example.com/tags/golang/"/>
+    
+  </entry>
   
   <entry>
     <title>python设计模式</title>
