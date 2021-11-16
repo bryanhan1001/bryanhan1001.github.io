@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://bryanhan1001.github.io/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://bryanhan1001.github.io/"/>
-  <updated>2021-04-13T14:47:53.633Z</updated>
-  <id>https://bryanhan1001.github.io/</id>
+  <link href="http://example.com/"/>
+  <updated>2021-11-16T14:39:21.058Z</updated>
+  <id>http://example.com/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,33 +18,31 @@
   
   <entry>
     <title>golang面试题</title>
-    <link href="https://bryanhan1001.github.io/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://bryanhan1001.github.io/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <link href="http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
     <published>2021-04-13T14:46:45.000Z</published>
-    <updated>2021-04-13T14:47:53.633Z</updated>
+    <updated>2021-11-16T14:39:21.058Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>redis实现分布式锁：</li></ol>]]></content>
+    <content type="html"><![CDATA[<h4 id="基本理解"><a href="#基本理解" class="headerlink" title="基本理解"></a>基本理解</h4><ul><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247489302&idx=1&sn=c787d1fa4546e12c7e55e880da73c91f&scene=21#wechat_redirect">Go 是传值还是传引用？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247489195&idx=1&sn=a39c9703021e130606b228119d535d4a&scene=21#wechat_redirect">Go 面试官问我如何实现面向对象？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487749&idx=1&sn=6add61c0404fd6f1bdc434eed347f559&scene=21#wechat_redirect">Go 结构体和结构体指针调用有什么区别吗？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487140&idx=1&sn=36d12263308fd24c32e9f5327e73ba21&scene=21#wechat_redirect">Go new 和 make 是什么，差异在哪？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247488604&idx=1&sn=83219ea874b1345debc65904cd7f025a&scene=21#wechat_redirect">什么是协程，协程和线程的区别和联系？</a></p></li></ul><h4 id="调度模型"><a href="#调度模型" class="headerlink" title="调度模型"></a>调度模型</h4><ul><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487503&idx=1&sn=bfc20f81a1c6059ca489733b31a2c63c&scene=21#wechat_redirect">GMP 模型，为什么要有 P？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487631&idx=1&sn=0c6d3e548573197e8281f622d8d5b0d7&scene=21#wechat_redirect">Go 结构体是否可以比较，为什么？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487643&idx=1&sn=f81b18a12ab156feebb9fc9329e1c8f4&scene=21#wechat_redirect">单核 CPU，开两个 Goroutine，其中一个死循环，会怎么样？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487486&idx=1&sn=aee9f99265fa8137e9d17e43c1ffb9ca&scene=21#wechat_redirect">进程、线程都有 ID，为什么 Goroutine 没有 ID？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487250&idx=1&sn=3004324a9d2ba99233c4af48843dba64&scene=21#wechat_redirect">Goroutine 数量控制在多少合适，会影响 GC 和调度？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487902&idx=1&sn=5e4a09b18f87eee416238c1e75a2f5ea&scene=21#wechat_redirect">详解 Go 程序的启动流程，你知道 g0，m0 是什么吗？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487768&idx=1&sn=02ad5eb8619e1aa7a1835bb6b623caa4&scene=21#wechat_redirect">Goroutine 泄露的情况有哪些？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247488491&idx=1&sn=ec14ff3f26e8aaa923c0e0da17ee426b&scene=21#wechat_redirect">Go 在什么时候会抢占 P？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247491708&idx=1&sn=172b6fd9a2eab7b6eb00ffa46395f904&scene=21#wechat_redirect">会诱发 Goroutine 挂起的 27 个原因</a></p></li></ul><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487434&idx=1&sn=02dcfd4c0edc0fec867e93fb2bd69061&scene=21#wechat_redirect">Go interface 的一个 “坑” 及原理分析</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247487366&idx=1&sn=a0b2d5bfdb8ea5294094b1e7c59dd674&scene=21#wechat_redirect">Go defer 万恶的闭包问题</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247489045&idx=1&sn=197bda427246e16907c7b471a5dc0572&scene=21#wechat_redirect">为什么 Go map 和 slice 是非线程安全的？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247489164&idx=1&sn=e56e5c9836cda40f3c95a39e2ba57dde&scene=21#wechat_redirect">Go sync.map 和原生 map 谁的性能好，为什么？</a></p></li><li><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247491866&idx=1&sn=e20ee68678ac7d99a94759cc6d80f662&scene=21#wechat_redirect">为什么 Go map 的负载因子是 6.5？</a></p></li></ul><p><em><strong>摘自煎鱼大佬</strong></em></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;redis实现分布式锁：&lt;/li&gt;
-&lt;/ol&gt;
-</summary>
+    <summary type="html">&lt;h4 id=&quot;基本理解&quot;&gt;&lt;a href=&quot;#基本理解&quot; class=&quot;headerlink&quot; title=&quot;基本理解&quot;&gt;&lt;/a&gt;基本理解&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc</summary>
       
     
     
     
     
-    <category term="golang" scheme="https://bryanhan1001.github.io/tags/golang/"/>
+    <category term="golang" scheme="http://example.com/tags/golang/"/>
     
   </entry>
   
   <entry>
     <title>python设计模式</title>
-    <link href="https://bryanhan1001.github.io/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://bryanhan1001.github.io/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
+    <link href="http://example.com/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://example.com/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
     <published>2021-04-12T14:47:25.000Z</published>
     <updated>2021-04-12T14:47:25.545Z</updated>
     
@@ -55,19 +53,12 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://bryanhan1001.github.io/2021/04/12/hello-world/"/>
-    <id>https://bryanhan1001.github.io/2021/04/12/hello-world/</id>
-    <published>2021-04-12T14:00:14.913Z</published>
-    <updated>2021-04-12T14:00:14.913Z</updated>
+    <title>rust学习笔记</title>
+    <link href="http://example.com/2021/04/12/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/04/12/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-04-12T14:47:25.000Z</published>
+    <updated>2021-11-16T14:40:50.191Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
     
     
     
