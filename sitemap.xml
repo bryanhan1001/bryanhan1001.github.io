@@ -2,56 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2021/11/17/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-function/</loc>
-    
-    <lastmod>2021-11-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/11/17/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-string/</loc>
-    
-    <lastmod>2021-11-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/11/17/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-struct/</loc>
-    
-    <lastmod>2021-11-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/11/17/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F/</loc>
-    
-    <lastmod>2021-11-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/04/12/rust%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2021-11-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/04/13/golang%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    
-    <lastmod>2021-11-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/index.html</loc>
     
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-11-17</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/04/12/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://example.com/tags/index.html</loc>
+    
+    <lastmod>2021-11-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
+    
+    <lastmod>2021-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/undefined/</loc>
     
     <lastmod>2021-04-12</lastmod>
     
