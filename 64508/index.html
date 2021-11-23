@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            rust学习笔记-string | Hexo
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Hexo</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Tags</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Archives</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:bryanhan1001@gmail.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/bryanhan1001" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/64508/">rust学习笔记-string</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2021-11-17
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2021-11-17
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        Views:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=rust学习笔记-string&url=http://example.com/64508/&pic=http://example.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=rust学习笔记-string&url=http://example.com/64508/&via=John Doe" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/64508/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://example.com/64508/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/64508/&title=rust学习笔记-string" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=rust学习笔记-string&summary=&pics=http://example.com/null&url=http://example.com/64508/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://example.com/64508/&text=rust学习笔记-string" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/rust/ >rust</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对于字符串字面量而言，将硬编码直接嵌入了最终可执行文件中，所以能够高效访问，</span></span><br><span class="line"><span class="comment">// 但是我们不能将未知大小的文本编码在二进制文件中。对于String类型而言，为了支持一个可变的、可增长的文本类型，</span></span><br><span class="line"><span class="comment">// 我们需要在堆上分配一块再编译时未知大小的内存来存放数据。这意味着：</span></span><br><span class="line"><span class="comment">// 1. 我们使用的内存是由操作系统在运行时动态分配的</span></span><br><span class="line"><span class="comment">// 2. 当使用完 String 时，我们需要通过某种方式来将这些内存归还给操作系统</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// =================================================================</span></span><br><span class="line"><span class="comment">// rust 提供了另一套解决方案：内存会自动再拥有它的变量离开作用域后进行释放</span></span><br><span class="line"><span class="comment">// rust 会在作用域结束的地方（`&#125;`）处自动调用 drop 函数，释放内存</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// =================================================================</span></span><br><span class="line"><span class="comment">// 所有权规则</span></span><br><span class="line"><span class="comment">// - rust中的每一个值都有一个对应的变量作为它的所有者</span></span><br><span class="line"><span class="comment">// - 在同一时间内，值有且仅有一个所有者</span></span><br><span class="line"><span class="comment">// - 当所有者离开自己的作用域，它持有的值就会被释放掉</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="comment">// let mut s = String::from(&quot;Hello&quot;); // 调用置于String命名空间下的 from 函数</span></span><br><span class="line">    <span class="comment">// s.push_str(&quot;, world!&quot;); // push_str() 向String空间的尾部添加一段字面量</span></span><br><span class="line">    <span class="comment">// println!(&quot;&#123;&#125;&quot;, s);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// move， 默认类似于浅拷贝，但是会自动释放前一个变量</span></span><br><span class="line">    <span class="comment">// let s1 = String::from(&quot;hello&quot;);</span></span><br><span class="line">    <span class="comment">// let _s2 = s1;</span></span><br><span class="line">    <span class="comment">// println!(&quot;&#123;&#125;, world!&quot;, s1)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果需要深度拷贝 String 堆上的数据，可以使用clone方法</span></span><br><span class="line">    <span class="comment">// let s1 = String::from(&quot;hello&quot;);</span></span><br><span class="line">    <span class="comment">// let s2 = s1.clone();</span></span><br><span class="line">    <span class="comment">// println!(&quot;s1 = &#123;&#125;, s2 = &#123;&#125;&quot;, s1, s2);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line">    <span class="comment">// rust 提供了一个名为 Copy 的 trait， 它可以用于整数这类完全存储在栈上的数据类型。</span></span><br><span class="line">    <span class="comment">// 一旦某种类型拥有了 Copy 这种 trait，那么它的变量就可以在赋值给其他变量之后保持可用性</span></span><br><span class="line">    <span class="comment">// 如果一种类型本身或这种类型的任意成员实现了 Drop 这种 trait，那么rust不允许其实现 Copy 这种 trait。</span></span><br><span class="line">    <span class="comment">// 一般来说，任何简单标量的组合类型都可以是 Copy 的，任何需要分配内存或某种资源的类型都不会是 Copy 的，下面是一些拥有 Copy 的类型：</span></span><br><span class="line">    <span class="comment">// 1. 所有的中暑类型。诸如 u32</span></span><br><span class="line">    <span class="comment">// 2. 仅拥有两种值的 bool类型</span></span><br><span class="line">    <span class="comment">// 3. 字符类型（char）</span></span><br><span class="line">    <span class="comment">// 4. 浮点类型，f64</span></span><br><span class="line">    <span class="comment">// 5. 如果一个元组的所有字段的类型都是可Copy的，那么这个元组也是可Copy的</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把值传递给函数在语义上类似于对变量进行赋值，将变量传递给函数会触发移动或复制，就像是赋值语句一样。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 变量所有权转移总是遵循相同的模式：将一个值复制给另一个变量时就会转移所有权。</span></span><br><span class="line">    <span class="comment">// 当一个持有堆数据的变量离开作用域时，它的数据就会被drop清理回收，除非这些数据的所有权移动到了另一个变量上。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line">    <span class="comment">// 引用 &amp; 可以允许你在不获取所有权的前提下使用值， `*`操作成为解引用</span></span><br><span class="line">    <span class="comment">// 与变量类似，引用是默认不可变的，rust 不允许我们去修改引用指向的值。</span></span><br><span class="line">    <span class="comment">// 可变引用：&amp;mut String。可变引用是在使用上有一个很大的限制：对于特定作用域的特定数据，一次只能声明一个可变引用。这个限制可以帮助我们在编译时避免数据竞争。</span></span><br><span class="line">    <span class="comment">// 与大部分语言类似，我们可以通过花括号来创建一个新的作用域，这就使我们可以创建多个可变引用。</span></span><br><span class="line">    <span class="comment">// let mut s = String::from(&quot;hello&quot;);</span></span><br><span class="line">    <span class="comment">// &#123;</span></span><br><span class="line">    <span class="comment">//     let r1 = &amp;mut s;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// let r2 = &amp;mut s;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line">    <span class="comment">// 在结合使用可变引用与不可变引用时，还有另外一条类似的限制规则，它会导致下面的代码编译失败：</span></span><br><span class="line">    <span class="comment">// 不能在拥有不可变引用的同时创建可变引用</span></span><br><span class="line">    <span class="comment">// let mut s = String::from(&quot;hello&quot;);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// let r1 = &amp;s;</span></span><br><span class="line">    <span class="comment">// let r2 = &amp;s;</span></span><br><span class="line">    <span class="comment">// let r3 = &amp;mut s;</span></span><br><span class="line">    <span class="comment">// println!(&quot;r1:&#123;&#125;, r2:&#123;&#125;, r3:&#123;&#125;&quot;, r1, r2, r3)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line">    <span class="comment">// 悬垂引用</span></span><br><span class="line">    <span class="comment">// let reference_to_nothing = dangle();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// dangle() 内部创建的s，尝试返回一个指向s 的引用，rust会检测并拦截，解决方法可以直接返回 String，转移所有权到函数外部</span></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 引用的规则：</span></span><br><span class="line">    <span class="comment">// 在任何一段给定的时间里，你要么只能拥有一个可变引用，要么只能拥有任意数量的不可变引用。</span></span><br><span class="line">    <span class="comment">// 引用总是有效的</span></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 切片：除引用外，另一种不持有所有权的数据类型：切片允许我们引用集合中的某一段连续的元素序列。</span></span><br><span class="line">    <span class="keyword">let</span> s1 = <span class="built_in">String</span>::from(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    <span class="comment">// println!(&quot;&#123;&#125;&quot;, first_word(&amp;s1));</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, first_word(&amp;s1[..]));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// let s = String::from(&quot;hello world&quot;);</span></span><br><span class="line">    <span class="comment">// let hello = &amp;s[0..5];</span></span><br><span class="line">    <span class="comment">// let world = &amp;s[6..11];</span></span><br><span class="line">    <span class="comment">// println!(&quot;1:&#123;&#125;, 2:&#123;&#125;&quot;, hello, world);</span></span><br><span class="line">    <span class="comment">// =================================================================</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 借用规则： 当我们拥有了某个变量的不可变引用时，我们就无法同时获取改变量的可变引用。</span></span><br><span class="line">    <span class="comment">// 字符串字面量就是切片。</span></span><br><span class="line">    <span class="comment">// 这里变量 s 的类型就是 &amp;str：它是一个指向二进制程序特定位置的切片。正是由于 &amp;str 是一个不可变引用，所以字符串字面量才是不可变的</span></span><br><span class="line">    <span class="comment">// let s = &quot;hello&quot;;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他类型的切片</span></span><br><span class="line">    <span class="comment">// let s = [1,2,3,4,5];</span></span><br><span class="line">    <span class="comment">// let slice = &amp;s[1..3];</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 总结：</span></span><br><span class="line">    <span class="comment">// 所有权、借用和切片的概念是 rust 可以在编译时保证内存安全的关键所在。像其他系统级语言一样，rust 给予了程序员完善的内存使用控制能力。</span></span><br><span class="line">    <span class="comment">// 除此之外，借助于本章学习的工具，rust 还能自动清楚那些离开了作用域的数据。这几大地减轻了使用者的心智负担。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fn dangle() -&gt; &amp;String &#123;</span></span><br><span class="line"><span class="comment">//     let s = String::from(&quot;hello&quot;);</span></span><br><span class="line"><span class="comment">//     &amp;s</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fn no_dangle() -&gt; String &#123;</span></span><br><span class="line"><span class="comment">//     let s = String::from(&quot;hello&quot;);</span></span><br><span class="line"><span class="comment">//     s</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回第一个单词对应字符串的索引</span></span><br><span class="line"><span class="comment">// fn first_word(s: &amp;String) -&gt; usize &#123;</span></span><br><span class="line"><span class="comment">//     let bytes = s.as_bytes();   // 把 String 转换成字节数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//     for (i, &amp;item) in bytes.iter().enumerate()&#123;</span></span><br><span class="line"><span class="comment">//         if item == b&#x27; &#x27;&#123;</span></span><br><span class="line"><span class="comment">//             return i;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//     s.len()</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数签名 参数 &amp;String 改为 &amp;str，可以同时处理 String 和 &amp;str：</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">first_word</span></span>(s: &amp;<span class="built_in">str</span>) -&gt; &amp;<span class="built_in">str</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> bytes = s.as_bytes();</span><br><span class="line">    <span class="keyword">for</span> (i, &amp;item) <span class="keyword">in</span> bytes.iter().enumerate()&#123;</span><br><span class="line">        <span class="keyword">if</span> item == <span class="string">b&#x27; &#x27;</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &amp;s[..i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;s[..]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/60033/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>rust学习笔记-function</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/24696/">
+        <span>rust学习笔记-struct</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/64508/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2021 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        John Doe
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
