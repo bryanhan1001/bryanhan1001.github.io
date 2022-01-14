@@ -255,6 +255,110 @@
       
       
         <div class="post-header"> 
+  <a class="post-header-title" href="/61267/">设计模式-工厂模式</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2022-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2022-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/ >设计模式</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h3 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h3><blockquote>
+<p>由于go本身没有构造函数，一般我们使用<code>NewName</code>的方式创建对象/接口, 当它返回的是一个接口时，其实就是简单工厂模式。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> RuleParser <span class="keyword">interface</span> &#123;</span><br><span class="line">	Parse(data []<span class="keyword">byte</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> jsonParse <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(j jsonParse)</span> <span class="title">Parse</span><span class="params">(data []<span class="keyword">byte</span>)</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;json parse&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> yamlParse <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(y yamlParse)</span> <span class="title">Parse</span><span class="params">(data []<span class="keyword">byte</span>)</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;yaml parse&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewRuleParser</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">RuleParser</span></span> &#123;</span><br><span class="line">	<span class="keyword">switch</span> s &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="string">&quot;json&quot;</span>:</span><br><span class="line">		<span class="keyword">return</span> jsonParse&#123;&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="string">&quot;yaml&quot;</span>:</span><br><span class="line">		<span class="keyword">return</span> yamlParse&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/61267/">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/11081/">golang设计模式-观察者模式</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2022-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2022-01-14
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/golang-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/ >golang, 设计模式</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><blockquote>
+<p>一个对象的改变会触发其他观察者相应的动作，而此对象无需关系联动对象的具体实现。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ISubject <span class="keyword">interface</span> &#123;</span><br><span class="line">	Register(observer IObserver)</span><br><span class="line">	Remove(observer IObserver)</span><br><span class="line">	Notify(msg <span class="keyword">string</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> IObserver <span class="keyword">interface</span> &#123;</span><br><span class="line">	Accept(msg <span class="keyword">string</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Subject <span class="keyword">struct</span> &#123;</span><br><span class="line">	observers []IObserver</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Register 注册观察者</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Subject)</span> <span class="title">Register</span><span class="params">(observer IObserver)</span></span> &#123;</span><br><span class="line">	s.observers = <span class="built_in">append</span>(s.observers, observer)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove 移除观察者</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Subject)</span> <span class="title">Remove</span><span class="params">(observer IObserver)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i, obj := <span class="keyword">range</span> s.observers &#123;</span><br><span class="line">		<span class="keyword">if</span> obj == observer &#123;</span><br><span class="line">			s.observers = <span class="built_in">append</span>(s.observers[:i], s.observers[i+<span class="number">1</span>:]...)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Notify 通知消息</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Subject)</span> <span class="title">Notify</span><span class="params">(msg <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> _, obj := <span class="keyword">range</span> s.observers &#123;</span><br><span class="line">		obj.Accept(msg)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/11081/">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
   <a class="post-header-title" href="/1287/">golang设计模式笔记-单例模式</a>
   <div class="post-header-meta">
     <span>
