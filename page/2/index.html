@@ -50,6 +50,62 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
@@ -195,51 +251,56 @@
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
     
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/27461/">rust学习笔记</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2021-04-12
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2021-11-23
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;
+    </span>
+    
+  </div>
+</div>   
+    
 
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="page-describe">
-        11 posts in total.
+
+
+      
+      
+  <div class="tag-line-space"></div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/27461/">Read More</a>
+        </div>
+      </div>
+    </article>
+
+
+
+  <nav style="text-align: center;">
+    <div class="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </div>
-    <div class="posts-collapse">
-        
-            
-            
-                <div class="collection-title">
-                    <a href="/archives/2021"><h2>2021<small>Archives</small></h2></a>
-                </div>
-                
-            
-
-            <div class="collection-item">
-                <h3><a href="/36466/">golang面试题</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-13 >
-                    2021.04.13
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/47244/">python设计模式</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-12 >
-                    2021.04.12
-                </time>
-            </div>
-        
-            
-            
-
-            <div class="collection-item">
-                <h3><a href="/27461/">rust学习笔记</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-12 >
-                    2021.04.12
-                </time>
-            </div>
-        
-    </div>
-</div>
-
+  </nav>
 
   </main>
   <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">

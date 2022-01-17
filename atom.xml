@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-14T10:46:34.435Z</updated>
+  <updated>2022-01-17T10:10:17.034Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql总结</title>
+    <link href="http://example.com/58301/"/>
+    <id>http://example.com/58301/</id>
+    <published>2022-01-17T08:26:31.000Z</published>
+    <updated>2022-01-17T10:10:17.034Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="mysql-学习总结"><a href="#mysql-学习总结" class="headerlink" title="mysql 学习总结"></a>mysql 学习总结</h3><ol><li>一条SQL 查询语句是如何执行的</li></ol><blockquote><ol><li>Mysql 客户端雨服务端建立连接，客户端发送一条查询语句给服务器；</li><li>服务器先检查查询缓存，如果命中了缓存，则立刻返回存储在缓存中的结果；否则进行下一步；</li><li>服务器端进行sql解析、预处理、生成合法的解析树；</li><li>由优化器生成对应的执行计划；</li><li>mysql根据优化器生成的执行计划，调用相应的存储引擎的 api 来执行，并将执行结果返回给客户端。</li></ol></blockquote><ol start="2"><li>InnoDB 存储引擎支持以下几种索引：<ul><li>B+ 树索引：<strong>B+ 树是为磁盘或其他直接存取辅助设备设计的一种平衡查找树。在 B+ 树中，所有记录节点都是按键值的大小顺序存放在同一层的叶子节点上，各叶子节点之间通过双向链表进行连接。</strong></li><li>全文索引</li><li>哈希索引：哈希索引的缺点是无法进行范围查询</li></ul></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;mysql-学习总结&quot;&gt;&lt;a href=&quot;#mysql-学习总结&quot; class=&quot;headerlink&quot; title=&quot;mysql 学习总结&quot;&gt;&lt;/a&gt;mysql 学习总结&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;一条SQL 查询语句是如何执行的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blo</summary>
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-工厂模式</title>
