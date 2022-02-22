@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Archive: 2021 | Bryanhan</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <title>golange-Mutex | Bryanhan</title>
+  <meta name="description" content="互斥锁是在并发程序中对共享资源进行访问控制的主要手段，对此go 语言提供了Mutex，Mutex为一结构体类型，对外暴露Lock() 和 Unlock() 两个方法，分别用于加锁和解锁。   Mutex 的数据结构   Mutex的结构体 1234type Mutex struct &amp;#123;  state int32  sema uint32&amp;#125;    Mutex.state 表示互">
+<meta property="og:type" content="article">
+<meta property="og:title" content="golange-Mutex">
+<meta property="og:url" content="http://example.com/58432/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="互斥锁是在并发程序中对共享资源进行访问控制的主要手段，对此go 语言提供了Mutex，Mutex为一结构体类型，对外暴露Lock() 和 Unlock() 两个方法，分别用于加锁和解锁。   Mutex 的数据结构   Mutex的结构体 1234type Mutex struct &amp;#123;  state int32  sema uint32&amp;#125;    Mutex.state 表示互">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-22T06:40:30.000Z">
+<meta property="article:modified_time" content="2022-02-22T11:12:18.474Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/archives/2021/index.html">
+  <link rel="canonical" href="http://example.com/58432/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -276,108 +281,217 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">Archive: 2021</h1>
-	      <p class="text-muted">Total 12 articles</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-golang-Mutex" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      golange-Mutex
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2021" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2021
-            </a>
-            <!-- <a href="/archives/2021" class="archive-year">2021</a> -->
-          </h3>
-        </div>
-        <div id="collapse2021" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2021">
-        <div class="panel-body">
-          <div class="collection">
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/58432/" class="article-date">
+	  <time datetime="2022-02-22T06:40:30.000Z" itemprop="datePublished">2022-02-22</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/golang/" rel="tag">golang</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/58432/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>互斥锁是在并发程序中对共享资源进行访问控制的主要手段，对此go 语言提供了Mutex，Mutex为一结构体类型，对外暴露Lock() 和 Unlock() 两个方法，分别用于加锁和解锁。</p>
+</blockquote>
+<ol>
+<li>Mutex 的数据结构</li>
+</ol>
+<ul>
+<li><p>Mutex的结构体</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Mutex <span class="keyword">struct</span> &#123;</span><br><span class="line">  state <span class="keyword">int32</span></span><br><span class="line">  sema <span class="keyword">uint32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li><p>Mutex.state 表示互斥锁的状态，比如是否被锁定等；</p>
+</li>
+<li><p>Mutex.sema 表示信号量，协程阻塞等待该信号量，解锁的协程释放信号量从而唤醒等待信号量的协程。</p>
+</li>
+<li><p>Mutex 的内存布局如图![image-20220222173645793](/Users/hanzhaoqing/Library/Application Support/typora-user-images/image-20220222173645793.png)</p>
+<ul>
+<li>Locked： 表示该Mutex是否已被锁定，0表示没有锁定，1表示已经锁定；</li>
+<li>Woken： 表示是否有协程已被唤醒，0表示没有，1表示已有协程唤醒，正在加锁过程中；</li>
+<li>Straving：表示该Mutex是否处于饥饿状态，0表示没有，1表示饥饿状态，说明有协程阻塞超过1ms；</li>
+<li>Waiter：表示阻塞等待锁的协程个数，协程解锁是根据此值来判断是否需要释放信号量。</li>
+</ul>
+<p>协程之间的抢锁实际上是争抢给Locked赋值的权利，能给Locked置为1，说明抢到锁。否则就阻塞等待Muted.sema 信号量，一旦持有锁的协程释放锁，那么等待的协程会依次被唤醒。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><p>加解锁过程</p>
+<ul>
+<li><p>简单加锁：</p>
+<ul>
+<li>假设当前只有一个协程在加锁，没有其他协程干扰</li>
+<li>加锁国产中会判断Locked是否为0，如果是0则把Locked位置1，代表加锁成功，其他状态为不变</li>
+</ul>
+</li>
+<li><p>加锁被阻塞</p>
+<ul>
+<li>假定加锁时锁被其他协程占用了，当对一个已被占用的锁再次加锁时，waiter 计数器加1，此时改协程阻塞，知道Locked值变为0才会被唤醒</li>
+</ul>
+</li>
+<li><p>简单解锁</p>
+<ul>
+<li>假定解锁是没有其他协程阻塞，此时只需要把Locked 位置为0即可</li>
+</ul>
+</li>
+<li><p>解锁并唤醒协程</p>
+<ul>
+<li>假定解锁时有一个或多个协程阻塞，解锁过程分为两个步骤。一是把Locked位置为0，而是查看到Waiter&gt;0, 释放一个信号量，唤醒一个阻塞的协程，被唤醒的协程把Locked位置1，于是该协程获得锁。</li>
+</ul>
+</li>
+<li><p>自旋过程</p>
+<blockquote>
+<p>加锁时，如果当前Locked位为1，则说明锁被其他协程持有，尝试加锁的协程并不是马上转入阻塞，而是会持续探测Locked为是否变为0，这个过程为自旋过程。</p>
+<p>自旋的时间很短，如果在自旋过程中发现锁已释放，则协程可以立即获得锁。此时即便有西城被唤醒也无法获取锁，只能再次阻塞。</p>
+<p>自旋的好处是，当加锁失败时不必立即转入阻塞，有一定机会获得锁，这样可以避免协程的切换。</p>
+</blockquote>
+<ul>
+<li><p>什么是自旋</p>
+<blockquote>
+<p>自旋对应CPU的PAUSE指令，该指令什么都不做，相当于CPU空转，对程序而言相当于“sleep”了一小段时间，当前实现是30个时钟周期。</p>
+<p>自旋过程会持续探测Locked位是否变为0，连续两次探测间隔就是在执行这些PAUSE指令</p>
+</blockquote>
+</li>
+<li><p>自旋条件</p>
+<blockquote>
+<p>加锁时 程序会自动判断是否可以自旋。判断条件如下：</p>
+<ul>
+<li>自旋次数要足够少，通常位4</li>
+<li>CPU核数要大于1，否则自旋么有意义，因为此时不可能有其他协程释放锁</li>
+<li>协程调度机制中的Process要大于1</li>
+<li>协程调度机制中的可运行队列必须位空，否则会延迟协程调度</li>
+</ul>
+</blockquote>
+</li>
+<li><p>自旋的优势</p>
+<blockquote>
+<p>可以更充分的利用CPU，尽量避免协程切换。因为申请加锁的协程拥有CPU，如果经过短时间的自旋可以获得锁，则不必进入阻塞状态。</p>
+</blockquote>
+</li>
+<li><p>自旋的问题</p>
+<blockquote>
+<p>如果自旋过程中获得锁，那么之前被阻塞的协程将无法获得锁。如果加锁的协程特别多，那么之前阻塞的进程将很难获得锁，从未进入饥饿状态。</p>
+<p>为了避免协程长时间无法获取锁，自1.8版本增加了一个状态，即Mutex的Straving状态，在这个状态下不会自旋，一旦有协程释放锁，那么一定会唤醒一个协程并成功加锁。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Mutex的模式</p>
+<ul>
+<li><p>每个Mutex都有两种模式，成为Normal和Straving。</p>
+<ul>
+<li><p>Normal模式：</p>
+<blockquote>
+<p>默认模式，在该模式下，协程如果加锁不成功，会判断是否满足自旋条件，如果满足则启动自旋过程</p>
+</blockquote>
+</li>
+<li><p>Straving模式：</p>
+<blockquote>
+<p>自旋过程中能抢到锁，一定意味着同一时刻有协程释放了锁。我们知道释放锁时如果发现有阻塞的协程，会释放一个信号量来唤醒一个等待协程，被唤醒的协程得到CPU后开始运行，此时发现锁已经被抢占了，只能再次阻塞，不过阻塞前会判断自上次阻塞到本次阻塞经过了多长时间，如果超过1ms，则会将Mutex标记为“饥饿”模式，然后阻塞。</p>
+<p>在“饥饿”模式下，不会启动字段过程，即一旦有协程释放了锁，那么一定会唤醒协程，被唤醒的协程将获得锁，同时等到计数减1.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Woken状态</p>
+<ul>
+<li>Woken状态被用于加锁和解锁过程中的通信。举个例子，同一时刻，两个协程一个在加锁，另一个在解锁，在加锁的协程可能在自旋过程，此时把Woken标记为1，用于通知解锁协程不必释放信号量</li>
+</ul>
+</li>
+<li><p>为什么重复解锁要触发panic</p>
+<blockquote>
+<p>Unlock分为将Locked置为0和判断Waiter值两个过程。如果值大于0，则释放信号量。</p>
+<p>如果多次执行Unlock，那么可能每次释放一个信号量，这样会唤醒多个协程，多个协程唤醒后会继续在Lock的逻辑中抢锁，势必增加Lock实现的复杂度，也会引起不必要的协程切换。</p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+    </div>
+  </article>
+  
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-<a href="/60033/" class="collection-item"   itemprop="url">
-  <time datetime="2021-11-17T14:17:16.000Z" itemprop="datePublished">2021-11-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> rust学习笔记-function
-</a>
+  </section>
 
 
   
-    
-    
-    
-<a href="/64508/" class="collection-item"   itemprop="url">
-  <time datetime="2021-11-17T14:16:05.000Z" itemprop="datePublished">2021-11-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> rust学习笔记-string
-</a>
+</div>
 
-
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
+  <ul class="pager pull-left">
     
     
-    
-<a href="/24696/" class="collection-item"   itemprop="url">
-  <time datetime="2021-11-17T14:14:34.000Z" itemprop="datePublished">2021-11-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> rust学习笔记-struct
-</a>
-
-
-  
+    <li class="next">
+      <a href="/58301/" title="mysql总结"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
-    
-<a href="/14206/" class="collection-item"   itemprop="url">
-  <time datetime="2021-11-17T14:12:51.000Z" itemprop="datePublished">2021-11-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> rust学习笔记-变量
-</a>
-
-
-  
-    
-    
-    
-<a href="/36466/" class="collection-item"   itemprop="url">
-  <time datetime="2021-04-13T14:46:45.000Z" itemprop="datePublished">2021-04-13</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> golang面试题
-</a>
-
-
-  
-    
-    
-    
-<a href="/47244/" class="collection-item"   itemprop="url">
-  <time datetime="2021-04-12T14:47:25.000Z" itemprop="datePublished">2021-04-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> python设计模式
-</a>
-
-
-  
-    
-    
-    
-<a href="/27461/" class="collection-item"   itemprop="url">
-  <time datetime="2021-04-12T14:47:25.000Z" itemprop="datePublished">2021-04-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> rust学习笔记
-</a>
-
-
+  </ul>
   
   
-    </div></div></div></section>
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="wechat,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
   
 
-	    </div>
-  	</article>
-  	 	
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -430,6 +544,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
